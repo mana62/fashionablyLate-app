@@ -1,0 +1,71 @@
+.header-nav-list {
+    display: flex;
+}
+
+.header-nav-item {
+    list-style: none;
+    padding: 0 25px;
+}
+
+.header-nav-item a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.message {
+    text-align: center;
+    padding-top: 95px;
+    padding-bottom: 0;
+}
+
+.message-p {
+    color: #000;
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.message-session {
+    color: #ff0000;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 0;
+}
+
+.attendance {
+    margin-top: 95px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.attendance-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.attendance-row {
+    padding-bottom: 18%;
+}
+
+.attendance-button {
+    padding: 30px;
+    padding-top: 20px;
+}
+
+.attendance-button__submit {
+    font-size: 20px;
+    padding: 60px 120px;
+    cursor: pointer;
+    font-weight: 400;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.attendance-button__submit:disabled {
+    background-color: #f0eded;
+    cursor: not-allowed;
+
+}
