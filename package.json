@@ -1,0 +1,23 @@
+{
+  "name": "atte",
+  "version": "1.0.0",
+  "description": "・従業員の勤怠管理アプリ<br>",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run development",
+    "development": "mix",
+    "watch": "mix watch",
+    "hot": "mix watch --hot",
+    "prod": "npm run production",
+    "production": "mix --production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "laravel-mix": "^6.0.49",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.78.0",
+    "sass-loader": "^12.6.0"
+  }
+}
