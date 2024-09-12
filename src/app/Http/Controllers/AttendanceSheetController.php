@@ -45,35 +45,42 @@ class AttendanceSheetController extends Authenticatable implements MustVerifyEma
     }
 
     public function total($id)
-    {
-        $attendance = AttendanceSheet::with('breakTimes')->find($id); //AttendanceSheetとbreakTimesのリレーションを取得するため、withを使用、更にIDも探して$attendanceに格納
+{
+    $attendance = AttendanceSheet::with('breakTimes')->find($id); //リレーションとIDで勤務データを取得
 
-        if ($attendance && $attendance->start_time && $attendance->finish_time) { //もしattendanceが存在し、かつstart_timeとfinish_timeがあったら
-            //勤務時間の計算
-            $startTime = Carbon::parse($attendance->start_time); //start_timeを日付や時刻(tokyoの時間)を扱える形式に変換して$startTimeに格納
-            $finishTime = Carbon::parse($attendance->finish_time);
-            $totalWorkMinutes = $finishTime->diffInMinutes($startTime); //勤務開始と終了の時間差分を分単位で取得(diffInMinutes)
+    if ($attendance && $attendance->start_time && $attendance->finish_time) { //勤務開始・終了が存在する場合
+        //勤務時間の計算
+        $startTime = Carbon::parse($attendance->start_time);
+        $finishTime = Carbon::parse($attendance->finish_time);
+        $totalWorkMinutes = $finishTime->diffInMinutes($startTime);
 
-            //休憩時間の合計の計算
-            $totalBreakMinutes = $attendance->breakTimes->reduce(function ($carry, $breakTime) {  //reduce= 複数の要素を1つの値にまとめ、$carry = 前回の結果 {1つ目($carry)は前回の結果、2つ目(breakTime)現在の要素}
+        //休憩時間の合計の計算
+        $totalBreakMinutes = $attendance->breakTimes->reduce(function ($carry, $breakTime) {
+            //休憩終了時間が存在するかチェック
+            if ($breakTime->finish_break) {
                 $startBreak = Carbon::parse($breakTime->start_break);
                 $finishBreak = Carbon::parse($breakTime->finish_break);
                 return $carry + $finishBreak->diffInMinutes($startBreak);
-            }, 0);
+            }
+            return $carry; //休憩終了時間がない場合、合計に追加しない
+        }, 0);
 
+        //実働時間 = 勤務時間 - 休憩時間
+        $actualWorkMinutes = $totalWorkMinutes - $totalBreakMinutes;
 
-            //実働時間 = 勤務時間 - 休憩時間
-            $actualWorkMinutes = $totalWorkMinutes - $totalBreakMinutes;
-
-            return view('attendance.total', [
-                'attendance' => $attendance,
-                'totalWorkHours' => floor($totalWorkMinutes / 60),  // 勤務時間（時間）
-                'totalWorkMinutes' => $totalWorkMinutes % 60,        // 勤務時間（分）
-                'totalBreakHours' => floor($totalBreakMinutes / 60), // 休憩時間（時間）
-                'totalBreakMinutes' => $totalBreakMinutes % 60,      // 休憩時間（分）
-                'actualWorkHours' => floor($actualWorkMinutes / 60), // 実働時間（時間）
-                'actualWorkMinutes' => $actualWorkMinutes % 60,      // 実働時間（分）
-            ]);
-        }
+        return view('attendance.total', [
+            'attendance' => $attendance,
+            'totalWorkHours' => floor($totalWorkMinutes / 60),  //勤務時間（時間）
+            'totalWorkMinutes' => $totalWorkMinutes % 60,        //勤務時間（分）
+            'totalBreakHours' => floor($totalBreakMinutes / 60), //休憩時間（時間）
+            'totalBreakMinutes' => $totalBreakMinutes % 60,      //休憩時間（分）
+            'actualWorkHours' => floor($actualWorkMinutes / 60), //実働時間（時間）
+            'actualWorkMinutes' => $actualWorkMinutes % 60,      //実働時間（分）
+        ]);
     }
+
+    //勤務データが存在しない場合
+    return redirect()->back();
+}
+
 }
