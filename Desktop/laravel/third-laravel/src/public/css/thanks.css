@@ -1,0 +1,15 @@
+.form__thanks {
+    width: 100%;
+    max-width: 1230px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.form__thanks-ttl {
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}

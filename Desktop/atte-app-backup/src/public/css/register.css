@@ -1,0 +1,59 @@
+.register {
+    background: #ddd;
+}
+
+.register-ttl {
+    text-align: center;
+    padding-top: 100px;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.register-form {
+    margin-top: 35px;
+    text-align: center;
+}
+
+.register-form__item-input {
+    width: 25%;
+    padding: 15px;
+    border: 1px solid #7e7c7c;
+    border-radius: 3px;
+    font-size: 14px;
+    margin: 20px 0;
+}
+
+.register__error {
+    color: #ff0000;
+    font-size: 16px;
+    margin: 0 auto;
+}
+
+.register-form__button-submit {
+    width: 25%;
+    padding: 15px;
+    border: none;
+    background: rgb(29, 29, 218);
+    color: #fff;
+    border-radius: 3px;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 20px 0;
+}
+
+.form-login {
+    line-height: 1;
+    padding-bottom: 8%;
+}
+
+.form-login__p {
+    color: #6d6d6d;
+    font-size: 14px;
+}
+
+.form-login__link {
+    color: rgb(29, 29, 218);
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+}

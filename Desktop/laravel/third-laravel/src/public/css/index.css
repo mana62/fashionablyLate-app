@@ -1,0 +1,90 @@
+.form__heading {
+    width: 1230px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.form__heading-ttl {
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    padding: 20px 0;
+}
+
+.form__item {
+    margin-top: 15px;
+    width: 600px;
+    margin: 0 auto;
+}
+
+.form__content-item {
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.item-form {
+    display: flex;
+    align-items: center;
+    padding: 24px 0;
+    width: 100%;
+}
+
+.item-form-label {
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.form-required {
+    margin-right: 8px;
+    padding: 3px;
+    display: inline-block;
+    text-align: center;
+    font-size: 13px;
+    border: 1px solid #a8a5a5;
+    border-radius: 3px;
+    width: 40px;
+}
+
+.form-item-input {
+    border-radius: 3px;
+    margin-left: 40px;
+    padding: 0 10px;
+    height: 40px;
+    width: 100%;
+    background: #f2efef;
+    font-size: 15px;
+}
+
+.form-item-textarea {
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin-left: 40px;
+    padding: 0 10px;
+    height: 200px;
+    width: 100%;
+    background: #f2efef;
+    font-size: 18px;
+}
+
+.form__button-submit {
+    border-radius: 3px;
+    margin: 40px auto 0;
+    padding: 10px;
+    width: 200px;
+    display: block;
+    background: black;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.error {
+    color: red;
+    font-size: 18px;
+    text-align: right;
+    font-weight: bold;
+}

@@ -1,0 +1,16 @@
+.form {
+    width: 100%;
+    background-color: black;
+    height: 80px;
+
+}
+
+.form__ttl {
+    display: inline-block;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 100px;
+    padding: 20px;
+    text-decoration: none;
+}

@@ -1,0 +1,134 @@
+.todo__message-correct {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    background: #d1e7dd;
+    color: #0f5132;
+    border: 1px solid #badbcc;
+    font-size: 20px;
+    padding: 15px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.todo {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.todo__message-error {
+    color: red;
+    font-size: 20px;
+}
+
+.todo__content {
+    padding: 60px 15px;
+}
+
+.todo__create-content {
+    margin: 0;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+}
+
+.todo__create-input {
+    padding: 0 10px;
+    width: 700px;
+    height: 50px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 0;
+}
+
+.todo__create-button {
+    display: inline-block;
+    margin-left: 3px;
+}
+
+.todo-submit {
+    display: block;
+    margin-left: 3px;
+    background: #000;
+    color: #fff;
+    border: none;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    cursor: pointer;
+    padding: 10px 20px;
+    width: 90px;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.todo__table {
+    margin: 70px 100px;
+}
+
+.update-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.todo-table__row {
+    border-bottom: 1px solid #ddd;
+    line-height: 3;
+}
+
+.todo-table__inner {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.todo__content {
+    margin: 30px auto;
+    text-align: center;
+    width: 80%;
+}
+
+.todo-table__header {
+    margin-top: 10px;
+    font-size: 30px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    line-height: 2;
+}
+
+.todo__content-list {
+    border-bottom: 1px solid #ddd;
+    font-size: 18px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+}
+
+.update-form-input {
+    padding: 5px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-size: 18px;
+    outline: none;
+    border: none;
+}
+
+.todo__button-blue {
+    background: #0000ff;
+    border-radius: 5px;
+    border: none;
+    font-size: 14px;
+    color: #fff;
+    width: 70px;
+    margin: 10px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.todo__button-red {
+    background: #ff0000;
+    border-radius: 5px;
+    border: none;
+    font-size: 14px;
+    color: #fff;
+    width: 70px;
+    margin: 10px;
+    cursor: pointer;
+    padding: 10px;
+}
